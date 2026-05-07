@@ -1,0 +1,44 @@
+/* ============================================
+   DESIGN TOKENS
+   Matches color variables and text styles
+   defined in the Figma file.
+   ============================================ */
+
+:root {
+
+  /* --- Colors --- */
+  --color-background:    #FAF8F5;
+  --color-sheet:         #F0EAE3;
+  --color-card:          #FFFFFF;
+  --color-border:        #E2DDD5;
+  --color-border-strong: #C8BFB5;
+  --color-text-muted:    #78716B;
+  --color-text:          #1C1917;
+  --color-accent:        #1558D6;
+  --color-accent-light:  #DDE9FF;
+
+  /* --- Typography: Font Families --- */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  /* --- Typography: Font Sizes --- */
+  --text-display:  44px;
+  --text-h1:       34px;
+  --text-h2:       26px;
+  --text-h3:       20px;
+  --text-body-lg:  17px;
+  --text-body:     15px;
+  --text-caption:  13px;
+  --text-eyebrow:  11px;
+  --text-button:   15px;
+  --text-tag:      12px;
+
+  /* --- Typography: Font Weights --- */
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-bold:    700;
+
+  /* --- Typography: Letter Spacing --- */
+  --tracking-eyebrow: 0.12em; /* +12% tracking on Label/Eyebrow */
+
+}
