@@ -38,8 +38,10 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
+@media (hover: hover) {
+  a:hover {
+    text-decoration: underline;
+  }
 }
 
 
@@ -106,9 +108,11 @@ a:hover {
   white-space: nowrap;
 }
 
-.btn-primary:hover {
-  opacity: 0.88;
-  text-decoration: none;
+@media (hover: hover) {
+  .btn-primary:hover {
+    opacity: 0.88;
+    text-decoration: none;
+  }
 }
 
 /* Text link button — "view project →" */
@@ -125,11 +129,13 @@ a:hover {
   white-space: nowrap;
 }
 
-.btn-tertiary:hover {
-  background-color: var(--color-accent);
-  color: var(--color-text-inverted);
-  border-radius: 2px;
-  text-decoration: none;
+@media (hover: hover) {
+  .btn-tertiary:hover {
+    background-color: var(--color-accent);
+    color: var(--color-text-inverted);
+    border-radius: 2px;
+    text-decoration: none;
+  }
 }
 
 
@@ -214,11 +220,13 @@ a:hover {
   text-decoration: none;
 }
 
-.hero-company-link:hover {
-  background-color: var(--color-accent);
-  color: var(--color-text-inverted);
-  border-radius: 2px;
-  text-decoration: none;
+@media (hover: hover) {
+  .hero-company-link:hover {
+    background-color: var(--color-accent);
+    color: var(--color-text-inverted);
+    border-radius: 2px;
+    text-decoration: none;
+  }
 }
 
 /* Subtitle / bio text */
@@ -268,11 +276,13 @@ a:hover {
   text-decoration: none;
 }
 
-.footer-link:hover {
-  background-color: var(--color-accent);
-  color: var(--color-text-inverted);
-  border-radius: 2px;
-  text-decoration: none;
+@media (hover: hover) {
+  .footer-link:hover {
+    background-color: var(--color-accent);
+    color: var(--color-text-inverted);
+    border-radius: 2px;
+    text-decoration: none;
+  }
 }
 
 /* Copyright and credits */
