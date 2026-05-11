@@ -16,8 +16,8 @@
   --color-text:          #1C1917;
   --color-accent:        #1558D6;
   --color-accent-light:  #DDE9FF;
-  --color-success:       #16A053;
-  --color-success-light: #E3EFE4;
+  --color-success:       #0B6145;
+  --color-success-light: #E0F2EC;
   --color-text-inverted: #FFFFFF;
 
   /* --- Typography: Font Families --- */
@@ -34,7 +34,7 @@
   --text-caption:  13px;
   --text-eyebrow:  11px;
   --text-button:   15px;
-  --text-tag:      12px;
+  --text-tag:      14px;
 
   /* --- Typography: Font Weights --- */
   --weight-regular: 400;
