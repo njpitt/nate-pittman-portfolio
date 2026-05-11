@@ -228,6 +228,65 @@ a:hover {
   color: var(--color-text-muted);
 }
 
+/* =====================
+   FOOTER
+   ===================== */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 48px 16px 24px;          /* extra top padding gives it breathing room from the grid */
+  background-color: var(--color-sheet);
+}
+
+/* Each labelled group (Quick Links, Connect) */
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* The list of links inside each section */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  padding-top: 4px;
+}
+
+/* Individual footer link — dark text, not accent blue */
+.footer-link {
+  display: inline-flex;
+  width: fit-content;
+  font-family: var(--font-body);
+  font-size: var(--text-button);    /* 15px */
+  font-weight: var(--weight-medium);
+  line-height: 20px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  background-color: var(--color-accent);
+  color: var(--color-text-inverted);
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+/* Copyright and credits */
+.footer-legal {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: var(--font-body);
+  font-size: var(--text-eyebrow);   /* 11px */
+  font-weight: var(--weight-medium);
+  line-height: 16px;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--color-text-muted);
+}
+
+
 /* Thin line separating hero from the project grid */
 .hero-divider {
   height: 1px;
