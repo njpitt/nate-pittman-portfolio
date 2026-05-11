@@ -16,6 +16,9 @@
   --color-text:          #1C1917;
   --color-accent:        #1558D6;
   --color-accent-light:  #DDE9FF;
+  --color-success:       #16A053;
+  --color-success-light: #E3EFE4;
+  --color-text-inverted: #FFFFFF;
 
   /* --- Typography: Font Families --- */
   --font-display: 'Playfair Display', Georgia, serif;
