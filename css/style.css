@@ -67,7 +67,9 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   padding: 10px 16px;
-  background-color: var(--color-background);
+  background-color: rgba(250, 248, 245, 0.80); /* semi-transparent warm off-white — creates the glass base */
+  backdrop-filter: blur(12px);               /* blurs content scrolling behind the nav */
+  -webkit-backdrop-filter: blur(12px);       /* same blur, required for Safari */
   border-bottom: 1px solid var(--color-border);
   z-index: 100;           /* sits above all other content */
 }
