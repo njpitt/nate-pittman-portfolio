@@ -41,3 +41,69 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+
+/* =====================
+   LAYOUT
+   ===================== */
+
+/* Pushes all page content below the fixed nav so nothing hides underneath it */
+.main {
+  padding-top: 56px;
+}
+
+
+/* =====================
+   NAVIGATION
+   ===================== */
+
+.nav {
+  position: fixed;        /* stays at top of screen as you scroll */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 100;           /* sits above all other content */
+}
+
+/* The "Nate Pittman" name on the left */
+.nav-wordmark {
+  font-family: var(--font-body);
+  font-size: var(--text-caption);   /* 13px */
+  font-weight: var(--weight-medium);
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+
+/* =====================
+   BUTTONS
+   ===================== */
+
+/* Filled blue button — used in nav and anywhere else later */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-accent);
+  color: var(--color-text-inverted);
+  font-family: var(--font-body);
+  font-size: var(--text-button);    /* 15px */
+  font-weight: var(--weight-medium);
+  line-height: 20px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  opacity: 0.88;
+  text-decoration: none;
+}
