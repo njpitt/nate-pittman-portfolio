@@ -167,6 +167,11 @@ a {
   color: var(--color-accent);
 }
 
+.tag-tertiary {
+  background-color: var(--color-card);
+  color: var(--color-text-muted);
+}
+
 
 /* =====================
    HERO
@@ -379,4 +384,220 @@ a {
   font-weight: var(--weight-bold);
   line-height: 24px;
   color: var(--color-text);
+}
+
+
+/* =====================
+   CASE STUDY — SHARED
+   Styles for all case study pages.
+   ===================== */
+
+/* Prevent underline when nav-wordmark is used as a back-link on case study pages */
+@media (hover: hover) {
+  a.nav-wordmark:hover {
+    text-decoration: none;
+  }
+}
+
+/* Thin 1px horizontal rule — separates problem section blocks */
+.section-divider {
+  height: 1px;
+  background-color: var(--color-border);
+  width: 100%;
+}
+
+/* Page title area — sits just below the fixed nav */
+.cs-header {
+  padding: 8px 16px;
+}
+
+.cs-title {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);         /* 34px */
+  font-weight: var(--weight-medium);
+  line-height: 40px;
+  color: var(--color-text);
+}
+
+/* Hero image — 16px padding gives it breathing room from the edges */
+.cs-hero {
+  padding: 16px;
+}
+
+/* Overview bar — stacked white meta cards */
+.cs-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+
+/* Each white card in the overview bar */
+.meta-card {
+  background-color: var(--color-card);
+  display: flex;
+  gap: 16px;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+/* Each column inside a meta card (e.g. Role / Team) */
+.meta-cell {
+  flex: 1;                /* both columns share space equally */
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;           /* prevents long text from overflowing the flex container */
+}
+
+/* The value text below the eyebrow label */
+.meta-value {
+  font-family: var(--font-body);
+  font-size: var(--text-body);       /* 15px */
+  font-weight: var(--weight-regular);
+  line-height: 20px;
+  color: var(--color-text);
+}
+
+/* Generic section wrapper — used for problem and solution */
+.cs-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px 16px;
+}
+
+/* Eyebrow label + H2 stacked together */
+.cs-section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* H2 — problem and solution statements (Playfair) */
+.cs-section-title {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);         /* 26px */
+  font-weight: var(--weight-medium);
+  line-height: 28px;
+  color: var(--color-text);
+}
+
+/* H3 — Goal, Context, and other subsection labels (DM Sans Bold) */
+.cs-subsection-title {
+  font-family: var(--font-body);
+  font-size: var(--text-h3);         /* 20px */
+  font-weight: var(--weight-bold);
+  line-height: 24px;
+  color: var(--color-text);
+}
+
+/* H3 + body copy grouped */
+.cs-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Body copy in muted color — used under H3s and in solution subtext */
+.cs-body-muted {
+  font-family: var(--font-body);
+  font-size: var(--text-body);       /* 15px */
+  font-weight: var(--weight-regular);
+  line-height: 20px;
+  color: var(--color-text-muted);
+}
+
+/* Image + caption stacked together */
+.cs-image-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Full-width 16:9 image — fills the content area */
+.cs-image-full {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+/* Sheet-colored caption box below images */
+.cs-caption {
+  background-color: var(--color-sheet);
+  padding: 12px;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: var(--text-caption);    /* 13px */
+  font-weight: var(--weight-regular);
+  line-height: 20px;
+  color: var(--color-text);
+}
+
+/* Space between paragraphs inside a multi-line caption */
+.cs-caption p + p {
+  margin-top: 8px;
+}
+
+/* Two portrait images side by side */
+.cs-two-up {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cs-two-up img {
+  width: 175px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+}
+
+/* CTA block — centered call to action at the bottom of the case study */
+.cs-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.cs-cta-heading {
+  font-family: var(--font-body);
+  font-size: var(--text-h3);         /* 20px */
+  font-weight: var(--weight-bold);
+  line-height: 24px;
+  color: var(--color-text);
+  text-align: center;
+}
+
+/* Centered, wrapping row of tags */
+.cs-cta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+/* Full-width blue CTA button */
+.btn-reach-out {
+  display: block;
+  width: 100%;
+  background-color: var(--color-accent);
+  color: var(--color-text-inverted);
+  font-family: var(--font-body);
+  font-size: var(--text-button);     /* 15px */
+  font-weight: var(--weight-medium);
+  line-height: 20px;
+  padding: 12px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
+}
+
+@media (hover: hover) {
+  .btn-reach-out:hover {
+    opacity: 0.88;
+    text-decoration: none;
+  }
 }
