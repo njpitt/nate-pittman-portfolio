@@ -10,92 +10,109 @@
 
   <!-- Navigation — fixed to top of screen, stays visible while scrolling -->
   <nav class="nav">
-    <span class="nav-wordmark">Nate Pittman</span>
+    <!-- "NJP" on mobile, "Nate Pittman" on desktop — toggled via CSS -->
+    <span class="nav-wordmark">
+      <span class="nav-wordmark-mobile">NJP</span>
+      <span class="nav-wordmark-desktop">Nate Pittman</span>
+    </span>
     <a href="#contact" class="btn-primary">Contact</a>
   </nav>
 
-  <!-- Main content lives here — padding-top in CSS pushes it below the fixed nav -->
+  <!-- Main content — padding-top pushes everything below the fixed nav -->
   <main class="main">
 
-    <!-- Hero section — headline, workplace context, bio, and divider -->
+    <!-- Hero section — headline with inline company link, bio -->
     <section class="hero">
-      <div class="hero-copy">
+      <div class="site-container">
+        <div class="hero-copy">
 
-        <div class="hero-header">
-          <h1 class="hero-heading">I'm a Senior product designer based in Chattanooga, TN 🌲</h1>
+          <!--
+            The heading is now a single sentence with Ulta Beauty as an inline
+            underlined link — it inherits the heading color, not accent blue.
+          -->
+          <h1 class="hero-heading">I'm a senior product designer with <a href="https://www.ulta.com" class="hero-company-link" target="_blank" rel="noopener">Ulta Beauty</a>, based in Chattanooga, TN</h1>
 
-          <!-- Workplace context: eyebrow label + Ulta Beauty as a large link -->
-          <div class="hero-workplace">
-            <p class="grid-eyebrow">Designing for AI &amp; Discovery at</p>
-            <a href="https://www.ulta.com" class="hero-company-link" target="_blank" rel="noopener">Ulta Beauty</a>
-          </div>
+          <p class="hero-bio">I thrive while framing problems and crafting solutions across teams.</p>
+
         </div>
-
-        <p class="hero-bio">I excel in framing problems and crafting solutions collaboratively across teams.</p>
-
       </div>
-
-      <!-- Thin horizontal rule that separates the hero from the project grid -->
-      <div class="hero-divider"></div>
     </section>
 
     <!-- Project grid — featured case studies -->
     <section class="grid-section">
-      <p class="grid-eyebrow">Featured Projects</p>
+      <div class="site-container">
 
-      <div class="project-grid">
+        <p class="grid-eyebrow">Featured Projects</p>
 
-        <!-- Card 1: Product browsing history rail -->
-        <article class="card-project">
-          <div class="card-image">
-            <img src="assets/images/thumbnail-project1.png" alt="Product history rail" />
-          </div>
-          <div class="card-details">
-            <div class="tag-rail">
-              <span class="tag tag-success">shipped</span>
-              <span class="tag tag-accent">2x conversion</span>
-              <span class="tag tag-accent">user research</span>
-              <span class="tag tag-accent">UI design</span>
+        <div class="project-grid">
+
+          <!-- Card 1: Recently viewed rail -->
+          <article class="card-project">
+            <!--
+              The card-image div holds both the thumbnail and the tag rail.
+              On mobile: tags flow below the image in a column.
+              On desktop: tags are absolutely positioned over the image (bottom-left).
+              <picture> serves the sm image on mobile and lg image on desktop.
+            -->
+            <div class="card-image">
+              <picture>
+                <source media="(min-width: 768px)" srcset="assets/images/case-study-1/thumbnail/image-thumbnail-recentlyviewed-lg.png">
+                <img src="assets/images/case-study-1/thumbnail/image-thumbnail-recentlyviewed-sm.png" alt="Recently viewed rail in Ulta search" />
+              </picture>
+              <div class="tag-rail">
+                <span class="tag tag-success">shipped</span>
+                <span class="tag tag-accent">2x conversion</span>
+                <span class="tag tag-accent">UXR validation</span>
+                <span class="tag tag-accent">UI design</span>
+              </div>
             </div>
-            <p class="card-title">Recently viewed rail</p>
-            <a href="case-study-1.html" class="btn-tertiary">view project →</a>
-          </div>
-        </article>
-
-        <!-- Card 2: Filter & guided navigation evolution -->
-        <article class="card-project">
-          <div class="card-image">
-            <img src="assets/images/thumbnail-project2.png" alt="Filter and guided navigation evolution" />
-          </div>
-          <div class="card-details">
-            <div class="tag-rail">
-              <span class="tag tag-accent">concept</span>
-              <span class="tag tag-accent">major ARR</span>
-              <span class="tag tag-accent">UXR validation</span>
-              <span class="tag tag-accent">strategy</span>
+            <div class="card-details">
+              <p class="card-title">Recently viewed rail</p>
+              <a href="case-study-1.html" class="btn-tertiary">view project →</a>
             </div>
-            <p class="card-title">Filter &amp; guided navigation evolution</p>
-            <a href="#" class="btn-tertiary">view project →</a>
-          </div>
-        </article>
+          </article>
 
-        <!-- Card 3: Bella AI Chat -->
-        <article class="card-project">
-          <div class="card-image">
-            <img src="assets/images/thumbnail-project3.png" alt="Bella AI Chat" />
-          </div>
-          <div class="card-details">
-            <div class="tag-rail">
-              <span class="tag tag-success">shipped</span>
-              <span class="tag tag-accent">agentic AI</span>
-              <span class="tag tag-accent">Ulta x Google</span>
-              <span class="tag tag-accent">strategy</span>
+          <!-- Card 2: Filter & guided navigation evolution -->
+          <article class="card-project">
+            <div class="card-image">
+              <picture>
+                <source media="(min-width: 768px)" srcset="assets/images/case-study-2/thumbnail/image-thumbnail-filterguidednav-lg.png">
+                <img src="assets/images/case-study-2/thumbnail/image-thumbnail-filterguidednav-sm.png" alt="Filter and guided navigation evolution" />
+              </picture>
+              <div class="tag-rail">
+                <span class="tag tag-accent">concept</span>
+                <span class="tag tag-accent">major ARR</span>
+                <span class="tag tag-accent">UXR validation</span>
+                <span class="tag tag-accent">strategy</span>
+              </div>
             </div>
-            <p class="card-title">Bella AI Ulta assistant</p>
-            <a href="#" class="btn-tertiary">view project →</a>
-          </div>
-        </article>
+            <div class="card-details">
+              <p class="card-title">Filter &amp; guided navigation evolution</p>
+              <a href="#" class="btn-tertiary">view project →</a>
+            </div>
+          </article>
 
+          <!-- Card 3: Ulta AI MVP -->
+          <article class="card-project">
+            <div class="card-image">
+              <picture>
+                <source media="(min-width: 768px)" srcset="assets/images/case-study-3/thumbnail/image-thumbnail-aimvp-lg.png">
+                <img src="assets/images/case-study-3/thumbnail/image-thumbnail-aimvp-sm.png" alt="Ulta AI MVP" />
+              </picture>
+              <div class="tag-rail">
+                <span class="tag tag-success">shipped</span>
+                <span class="tag tag-accent">agentic AI</span>
+                <span class="tag tag-accent">Ulta x Google</span>
+                <span class="tag tag-accent">strategy</span>
+              </div>
+            </div>
+            <div class="card-details">
+              <p class="card-title">Ulta AI MVP</p>
+              <a href="#" class="btn-tertiary">view project →</a>
+            </div>
+          </article>
+
+        </div>
       </div>
     </section>
 

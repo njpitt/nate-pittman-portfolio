@@ -24,7 +24,7 @@
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body:    'DM Sans', system-ui, sans-serif;
 
-  /* --- Typography: Font Sizes --- */
+  /* --- Typography: Mobile Font Sizes --- */
   --text-display:  44px;
   --text-h1:       34px;
   --text-h2:       26px;
@@ -33,8 +33,13 @@
   --text-body:     15px;
   --text-caption:  13px;
   --text-eyebrow:  11px;
-  --text-button:   15px;
   --text-tag:      14px;
+  --text-button:   18px;
+
+  /* --- Typography: Desktop Font Sizes (768px and above) --- */
+  --text-desktop-display:  52px;
+  --text-desktop-body-lg:  22px;
+  --text-desktop-tag:      18px;
 
   /* --- Typography: Font Weights --- */
   --weight-regular: 400;

@@ -54,6 +54,24 @@ a {
   padding-top: 64px;
 }
 
+/*
+  site-container — centers content at a max of 960px on desktop.
+  Used as an inner wrapper inside sections that need constrained width.
+  On mobile it provides the standard 16px side padding.
+  On desktop it centers itself and removes the side padding.
+*/
+.site-container {
+  padding: 0 16px;
+}
+
+@media (min-width: 768px) {
+  .site-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
 
 /* =====================
    NAVIGATION
@@ -76,14 +94,23 @@ a {
   z-index: 100;           /* sits above all other content */
 }
 
-/* The "Nate Pittman" name on the left */
+/* Shared font styles for both wordmark variants */
 .nav-wordmark {
   font-family: var(--font-body);
-  font-size: var(--text-body);      /* 15px */
+  font-size: var(--text-body-lg);    /* 17px */
   font-weight: var(--weight-regular);
-  line-height: 20px;
+  line-height: 23px;
   color: var(--color-text);
   white-space: nowrap;
+}
+
+/* "NJP" on mobile, "Nate Pittman" on desktop — toggled by breakpoint */
+.nav-wordmark-desktop { display: none; }
+.nav-wordmark-mobile  { display: inline; }
+
+@media (min-width: 768px) {
+  .nav-wordmark-desktop { display: inline; }
+  .nav-wordmark-mobile  { display: none; }
 }
 
 
@@ -99,7 +126,7 @@ a {
   background-color: var(--color-accent);
   color: var(--color-text-inverted);
   font-family: var(--font-body);
-  font-size: var(--text-button);    /* 15px */
+  font-size: var(--text-button);    /* 18px */
   font-weight: var(--weight-medium);
   line-height: 20px;
   padding: 12px 16px;
@@ -121,7 +148,7 @@ a {
   align-items: center;
   width: fit-content;               /* hugs the text, doesn't stretch full width */
   font-family: var(--font-body);
-  font-size: var(--text-button);    /* 15px */
+  font-size: var(--text-button);    /* 18px */
   font-weight: var(--weight-medium);
   line-height: 20px;
   color: var(--color-accent);
@@ -148,10 +175,10 @@ a {
   display: inline-flex;
   align-items: center;
   width: fit-content;               /* hugs the text — prevents stretching in flex containers */
-  padding: 3px 4px;
+  padding: 4px 6px;
   border-radius: 4px;
   font-family: var(--font-body);
-  font-size: var(--text-tag);       /* 12px */
+  font-size: var(--text-tag);       /* 14px */
   font-weight: var(--weight-medium);
   line-height: 16px;
   white-space: nowrap;
@@ -177,59 +204,48 @@ a {
    HERO
    ===================== */
 
+/*
+  The hero section uses site-container for horizontal centering/padding.
+  On desktop it gets a bottom border to divide it from the project grid,
+  matching the thin divider in the Figma layout.
+*/
 .hero {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  padding: 24px 16px 0;
+  padding: 24px 0;
 }
 
+/* H1 and bio stacked with a small gap */
 .hero-copy {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
-/* Groups the H1 and the workplace element, with gap between them */
-.hero-header {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-/* Main headline */
+/*
+  Main headline — uses H2 size (26px) on mobile.
+  Grows to 52px (Desktop Display) at the 768px breakpoint.
+*/
 .hero-heading {
   font-family: var(--font-display);
-  font-size: var(--text-h1);        /* 34px */
+  font-size: var(--text-h2);        /* 26px on mobile */
   font-weight: var(--weight-medium);
-  line-height: 40px;
+  line-height: 28px;
   color: var(--color-text);
 }
 
-/* Groups the green tag + Ulta Beauty link */
-.hero-workplace {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-/* "Ulta Beauty" — large Playfair link, same hover pattern as before */
+/*
+  "Ulta Beauty" inline link inside the heading.
+  Inherits the heading's color (dark, not accent blue) and just adds an underline.
+  Hover shifts to accent blue so it still feels interactive.
+*/
 .hero-company-link {
-  display: block;
-  width: fit-content;               /* hugs text so hover bg doesn't stretch full width */
-  font-family: var(--font-display);
-  font-size: var(--text-h2);        /* 26px */
-  font-weight: var(--weight-medium);
-  line-height: 30px;
-  color: var(--color-accent);
-  text-decoration: none;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-position: from-font;
 }
 
 @media (hover: hover) {
   .hero-company-link:hover {
-    background-color: var(--color-accent);
-    color: var(--color-text-inverted);
-    border-radius: 2px;
+    color: var(--color-accent);
     text-decoration: none;
   }
 }
@@ -243,6 +259,26 @@ a {
   color: var(--color-text-muted);
 }
 
+/* Desktop hero overrides */
+@media (min-width: 768px) {
+  .hero {
+    padding: 56px 0 24px;           /* extra breathing room above, matches Figma spacing */
+    border-bottom: 0.5px solid var(--color-border-strong); /* divider between hero and grid */
+  }
+  .hero-copy {
+    gap: 24px;
+  }
+  .hero-heading {
+    font-size: var(--text-desktop-display); /* 52px */
+    line-height: 62px;
+  }
+  .hero-bio {
+    font-size: var(--text-desktop-body-lg); /* 22px */
+    line-height: 26px;
+  }
+}
+
+
 /* =====================
    FOOTER
    ===================== */
@@ -253,6 +289,12 @@ a {
   gap: 24px;
   padding: 48px 16px 24px;          /* extra top padding gives it breathing room from the grid */
   background-color: var(--color-sheet);
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding: 48px 40px 24px;        /* wider side padding on desktop */
+  }
 }
 
 /* Each labelled group (Quick Links, Connect) */
@@ -274,7 +316,7 @@ a {
   display: inline-flex;
   width: fit-content;
   font-family: var(--font-body);
-  font-size: var(--text-button);    /* 15px */
+  font-size: var(--text-button);    /* 18px */
   font-weight: var(--weight-medium);
   line-height: 20px;
   color: var(--color-text);
@@ -304,26 +346,27 @@ a {
 }
 
 
-/* Thin line separating hero from the project grid */
-.hero-divider {
-  height: 1px;
-  background-color: var(--color-border);
-  width: 100%;
-}
-
-
 /* =====================
    PROJECT GRID
    ===================== */
 
+/*
+  grid-section uses site-container internally for horizontal centering.
+  Vertical padding lives on the section itself.
+*/
 .grid-section {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 24px 16px;
+  padding: 24px 0;
 }
 
-/* Eyebrow label — used in hero workplace and project grid */
+/*
+  Eyebrow label — "FEATURED PROJECTS" header above the card list.
+  Mobile: 11px bold uppercase tracked-out label.
+  Desktop: 18px medium, full text color — more prominent, less label-like.
+  Also used in footer (Quick Links, Connect) — those stay at the mobile style always.
+*/
 .grid-eyebrow {
   font-family: var(--font-body);
   font-size: var(--text-eyebrow);   /* 11px */
@@ -334,12 +377,28 @@ a {
   text-transform: uppercase;
 }
 
-/* Card list — separated from eyebrow by a top border line */
+/* Card list */
 .project-grid {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  border-top: 1px solid var(--color-border);
+  gap: 40px;
+}
+
+@media (min-width: 768px) {
+  .grid-section {
+    gap: 16px;
+    padding: 48px 0 56px;
+  }
+  /* Desktop grid label — larger and full text color, distinct from the eyebrow pattern */
+  .grid-section .grid-eyebrow {
+    font-size: var(--text-desktop-tag); /* 18px */
+    font-weight: var(--weight-medium);
+    letter-spacing: 0;
+    color: var(--color-text);
+  }
+  .project-grid {
+    gap: 56px;
+  }
 }
 
 /* Individual project card */
@@ -349,32 +408,90 @@ a {
   gap: 12px;
 }
 
-/* Thumbnail image — fixed height, fills full width */
+/*
+  card-image — wraps both the thumbnail and the tag rail.
+
+  MOBILE: flex column so the tags flow naturally below the image.
+  The img itself gets the border-radius so the container doesn't clip the tags.
+
+  DESKTOP: becomes a fixed-height block with position:relative and overflow:hidden.
+  The picture/img fills it absolutely, and the tag rail is pinned to the bottom-left.
+*/
 .card-image {
-  height: 358px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* On mobile the picture element is a block flex-item that wraps the img */
+.card-image picture {
+  display: block;
   width: 100%;
-  overflow: hidden;
+}
+
+/* Mobile thumbnail — 4:3 aspect ratio with rounded corners */
+.card-image img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
   border-radius: 8px;
 }
 
-.card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* Tag rail below the image on mobile */
+.card-image .tag-rail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 10px;
 }
 
-/* Text content below the image */
+@media (min-width: 768px) {
+  /* Desktop: fixed height container, image fills it absolutely */
+  .card-image {
+    display: block;
+    position: relative;
+    height: 540px;                  /* 16:9 on a 960px container */
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  /* picture fills the container so the img can fill it too */
+  .card-image picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;             /* override the mobile 4:3 ratio */
+    border-radius: 0;               /* container's border-radius clips the corners now */
+    object-fit: cover;
+  }
+  /* Tag rail overlaid on image, bottom-left */
+  .card-image .tag-rail {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    padding-top: 0;
+    gap: 12px;
+  }
+  /* Desktop tags — larger text, slightly more padding, drop shadow to read over images */
+  .card-image .tag {
+    font-size: var(--text-desktop-tag); /* 18px */
+    line-height: 22px;
+    padding: 6px 8px;
+    box-shadow:
+      0px 1px 0.5px rgba(69, 69, 69, 0.10),
+      0px 0px 0.5px rgba(69, 69, 69, 0.12);
+  }
+}
+
+/* Text content below the image (title + view project link) */
 .card-details {
   display: flex;
   flex-direction: column;
   gap: 6px;
-}
-
-/* Horizontal row of tags — wraps to second line if needed */
-.tag-rail {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
 }
 
 /* Project title */
@@ -586,7 +703,7 @@ a {
   background-color: var(--color-accent);
   color: var(--color-text-inverted);
   font-family: var(--font-body);
-  font-size: var(--text-button);     /* 15px */
+  font-size: var(--text-button);     /* 18px */
   font-weight: var(--weight-medium);
   line-height: 20px;
   padding: 12px 16px;
