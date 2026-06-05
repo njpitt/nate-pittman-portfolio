@@ -66,6 +66,7 @@ a {
 
 @media (min-width: 768px) {
   .site-container {
+    width: 100%;
     max-width: 960px;
     margin: 0 auto;
     padding: 0;
