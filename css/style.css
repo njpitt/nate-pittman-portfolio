@@ -512,6 +512,19 @@ a {
    Styles for all case study pages.
    ===================== */
 
+/* Constrain case study content to 960px and center it on desktop */
+@media (min-width: 768px) {
+  .cs-header,
+  .cs-hero,
+  .cs-overview,
+  .cs-section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 /* Prevent underline when nav-wordmark is used as a back-link on case study pages */
 @media (hover: hover) {
   a.nav-wordmark:hover {
