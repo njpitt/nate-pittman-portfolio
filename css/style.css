@@ -445,27 +445,29 @@ a {
 }
 
 @media (min-width: 768px) {
-  /* Desktop: fixed height container, image fills it absolutely */
+  /* Desktop: aspect-ratio drives the height so it stays 16:9 at any container width */
   .card-image {
     display: block;
     position: relative;
-    height: 540px;                  /* 16:9 on a 960px container */
+    aspect-ratio: 16 / 9;
     border-radius: 8px;
     overflow: hidden;
   }
-  /* picture fills the container so the img can fill it too */
+  /*
+    display:contents removes the <picture> element from the layout entirely —
+    the <img> inside it then behaves as a direct child of .card-image,
+    which makes position:absolute + inset:0 work cleanly.
+  */
   .card-image picture {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    display: contents;
   }
   .card-image img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     aspect-ratio: auto;             /* override the mobile 4:3 ratio */
-    border-radius: 0;               /* container's border-radius clips the corners now */
+    border-radius: 0;               /* container clips corners via overflow:hidden */
     object-fit: cover;
   }
   /* Tag rail overlaid on image, bottom-left */
