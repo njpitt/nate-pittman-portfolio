@@ -177,7 +177,7 @@ a {
   align-items: center;
   width: fit-content;               /* hugs the text — prevents stretching in flex containers */
   padding: 4px 6px;
-  border-radius: 4px;
+  border-radius: 6px;               /* updated from 4px to match Figma Iteration 2.0 */
   font-family: var(--font-body);
   font-size: var(--text-tag);       /* 14px */
   font-weight: var(--weight-medium);
@@ -185,6 +185,7 @@ a {
   white-space: nowrap;
 }
 
+/* Keep old tag classes — still used on case study pages */
 .tag-success {
   background-color: var(--color-success-light);
   color: var(--color-success);
@@ -198,6 +199,43 @@ a {
 .tag-tertiary {
   background-color: var(--color-card);
   color: var(--color-text-muted);
+}
+
+/* --- New tag classes for home page cards (Iteration 2.0) --- */
+
+/* "shipped" — filled accent-blue pill */
+.tag-shipped {
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
+/* neutral info tag — white background with a subtle border */
+.tag-neutral {
+  background-color: var(--color-card);
+  color: var(--color-text-muted);
+  border: 0.5px solid var(--color-border);
+}
+
+/*
+  Desktop overrides for tags inside .card-details.
+  Scoped to .card-details so they don't affect case study page tags.
+  Larger size (18px), more padding (8px top/bottom, 12px sides), softer radius (8px).
+*/
+@media (min-width: 768px) {
+  .card-details .tag {
+    font-size: var(--text-desktop-tag); /* 18px */
+    line-height: 22px;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+  /* shipped pill gets a matching accent border on desktop */
+  .card-details .tag-shipped {
+    border: 0.5px solid var(--color-accent);
+  }
+  /* neutral tag gets a stronger border on desktop */
+  .card-details .tag-neutral {
+    border: 0.5px solid var(--color-border-strong);
+  }
 }
 
 
@@ -395,6 +433,7 @@ a {
     font-weight: var(--weight-medium);
     letter-spacing: 0;
     color: var(--color-text);
+    margin-bottom: 24px;              /* pushes the card grid away from the label */
   }
   .project-grid {
     gap: 56px;
@@ -420,6 +459,16 @@ a {
 .card-image {
   display: flex;
   flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* smooth hover animation */
+}
+
+@media (hover: hover) {
+  .card-project:hover .card-image {
+    transform: translateY(-3px);
+    box-shadow:
+      0px 8px 16px rgba(28, 25, 23, 0.08),
+      0px 2px 4px rgba(28, 25, 23, 0.06);
+  }
 }
 
 /* On mobile the picture element is a block flex-item that wraps the img */
@@ -434,14 +483,6 @@ a {
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 8px;
-}
-
-/* Tag rail below the image on mobile */
-.card-image .tag-rail {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding-top: 10px;
 }
 
 @media (min-width: 768px) {
@@ -470,30 +511,20 @@ a {
     border-radius: 0;               /* container clips corners via overflow:hidden */
     object-fit: cover;
   }
-  /* Tag rail overlaid on image, bottom-left */
-  .card-image .tag-rail {
-    position: absolute;
-    bottom: 16px;
-    left: 16px;
-    padding-top: 0;
-    gap: 12px;
-  }
-  /* Desktop tags — larger text, slightly more padding, drop shadow to read over images */
-  .card-image .tag {
-    font-size: var(--text-desktop-tag); /* 18px */
-    line-height: 22px;
-    padding: 6px 8px;
-    box-shadow:
-      0px 1px 0.5px rgba(69, 69, 69, 0.10),
-      0px 0px 0.5px rgba(69, 69, 69, 0.12);
-  }
 }
 
-/* Text content below the image (title + view project link) */
+/* Text content below the image — tag rail, title, view project link */
 .card-details {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;                         /* updated from 6px to match Iteration 2.0 spacing */
+}
+
+/* Tag row — wraps when there are too many tags for one line */
+.tag-rail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 /* Project title */
@@ -503,6 +534,30 @@ a {
   font-weight: var(--weight-bold);
   line-height: 24px;
   color: var(--color-text);
+}
+
+/*
+  Utility classes for showing/hiding content at specific breakpoints.
+  Works exactly like the NJP vs "Nate Pittman" toggle in the nav.
+  desktop-only: hidden on mobile, visible on desktop.
+  mobile-only: visible on mobile, hidden on desktop.
+*/
+.desktop-only { display: none; }
+.mobile-only  { display: inline-flex; }
+
+@media (min-width: 768px) {
+  /* Card title grows to 40px on desktop — Playfair Display heading weight */
+  .card-title {
+    font-size: var(--text-desktop-card-title); /* 40px */
+    line-height: 48px;
+  }
+  /* "view project →" link grows to 26px on desktop */
+  .btn-tertiary {
+    font-size: var(--text-desktop-button); /* 26px */
+    line-height: 31px;
+  }
+  .desktop-only { display: inline-flex; }
+  .mobile-only  { display: none; }
 }
 
 

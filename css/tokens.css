@@ -37,9 +37,11 @@
   --text-button:   18px;
 
   /* --- Typography: Desktop Font Sizes (768px and above) --- */
-  --text-desktop-display:  52px;
-  --text-desktop-body-lg:  22px;
-  --text-desktop-tag:      18px;
+  --text-desktop-display:    52px;
+  --text-desktop-body-lg:    22px;
+  --text-desktop-tag:        18px;
+  --text-desktop-card-title: 40px;
+  --text-desktop-button:     26px;
 
   /* --- Typography: Font Weights --- */
   --weight-regular: 400;

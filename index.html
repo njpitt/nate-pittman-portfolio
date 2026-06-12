@@ -48,26 +48,21 @@
 
           <!-- Card 1: Recently viewed rail -->
           <article class="card-project">
-            <!--
-              The card-image div holds both the thumbnail and the tag rail.
-              On mobile: tags flow below the image in a column.
-              On desktop: tags are absolutely positioned over the image (bottom-left).
-              <picture> serves the sm image on mobile and lg image on desktop.
-            -->
+            <!-- card-image now holds only the thumbnail — tags moved to card-details below -->
             <div class="card-image">
               <picture>
                 <source media="(min-width: 768px)" srcset="assets/images/case-study-1/thumbnail/image-thumbnail-recentlyviewed-lg.png">
                 <img src="assets/images/case-study-1/thumbnail/image-thumbnail-recentlyviewed-sm.png" alt="Recently viewed rail in Ulta search" />
               </picture>
-              <div class="tag-rail">
-                <span class="tag tag-success">shipped</span>
-                <span class="tag tag-accent">2x conversion</span>
-                <span class="tag tag-accent">UXR validation</span>
-                <span class="tag tag-accent">UI design</span>
-              </div>
             </div>
             <div class="card-details">
-              <p class="card-title">Recently viewed rail</p>
+              <div class="tag-rail">
+                <span class="tag tag-shipped">shipped</span>
+                <span class="tag tag-neutral">2x conversion</span>
+                <span class="tag tag-neutral">UXR validation</span>
+                <span class="tag tag-neutral desktop-only">UI design</span>
+              </div>
+              <p class="card-title">Re-surfacing products to aid user discovery and boost conversion.</p>
               <a href="case-study-1.html" class="btn-tertiary">view project →</a>
             </div>
           </article>
@@ -79,15 +74,16 @@
                 <source media="(min-width: 768px)" srcset="assets/images/case-study-2/thumbnail/image-thumbnail-filterguidednav-lg.png">
                 <img src="assets/images/case-study-2/thumbnail/image-thumbnail-filterguidednav-sm.png" alt="Filter and guided navigation evolution" />
               </picture>
-              <div class="tag-rail">
-                <span class="tag tag-accent">concept</span>
-                <span class="tag tag-accent">major ARR</span>
-                <span class="tag tag-accent">UXR validation</span>
-                <span class="tag tag-accent">strategy</span>
-              </div>
             </div>
             <div class="card-details">
-              <p class="card-title">Filter &amp; guided navigation evolution</p>
+              <div class="tag-rail">
+                <span class="tag tag-neutral">concept</span>
+                <span class="tag tag-neutral">major ARR</span>
+                <span class="tag tag-neutral mobile-only">analytics</span>
+                <span class="tag tag-neutral desktop-only">UXR validation</span>
+                <span class="tag tag-neutral">strategy</span>
+              </div>
+              <p class="card-title">Rebuilding the suggested filters to reduce choice overwhelm while increasing revenue by six figures.</p>
               <a href="#" class="btn-tertiary">view project →</a>
             </div>
           </article>
@@ -99,15 +95,18 @@
                 <source media="(min-width: 768px)" srcset="assets/images/case-study-3/thumbnail/image-thumbnail-aimvp-lg.png">
                 <img src="assets/images/case-study-3/thumbnail/image-thumbnail-aimvp-sm.png" alt="Ulta AI MVP" />
               </picture>
-              <div class="tag-rail">
-                <span class="tag tag-success">shipped</span>
-                <span class="tag tag-accent">agentic AI</span>
-                <span class="tag tag-accent">Ulta x Google</span>
-                <span class="tag tag-accent">strategy</span>
-              </div>
             </div>
             <div class="card-details">
-              <p class="card-title">Ulta AI MVP</p>
+              <div class="tag-rail">
+                <span class="tag tag-shipped">shipped</span>
+                <span class="tag tag-neutral">agentic AI</span>
+                <span class="tag tag-neutral mobile-only">Google</span>
+                <span class="tag tag-neutral desktop-only">Google collaboration</span>
+                <span class="tag tag-neutral">strategy</span>
+                <span class="tag tag-neutral desktop-only">UI design</span>
+                <span class="tag tag-neutral desktop-only">UX research</span>
+              </div>
+              <p class="card-title">Adding AI chat to the Ulta ecosystem in 6 months.</p>
               <a href="#" class="btn-tertiary">view project →</a>
             </div>
           </article>
