@@ -264,7 +264,6 @@ a {
 @media (min-width: 768px) {
   .hero {
     padding: 56px 0 24px;           /* extra breathing room above, matches Figma spacing */
-    border-bottom: 0.5px solid var(--color-border-strong); /* divider between hero and grid */
   }
   .hero-copy {
     gap: 24px;
