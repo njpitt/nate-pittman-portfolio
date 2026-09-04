@@ -599,7 +599,7 @@ a {
   color: var(--color-text);
 }
 
-/* Extra breathing room below the fixed nav on CS2 — Figma's spacer is 120px, halved here to match how it actually reads in browser */
+/* Extra breathing room below the fixed nav on case study pages — Figma's CS2 spacer is 120px, halved here to match how it actually reads in browser */
 .cs-header-spacer {
   height: 60px;
 }
