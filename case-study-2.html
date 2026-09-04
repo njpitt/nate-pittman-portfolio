@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filters &amp; Guided Navigation — Nate Pittman</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Navigation — same glass nav as homepage; wordmark links back to homepage -->
+  <nav class="nav">
+    <a href="index.html" class="nav-wordmark">Nate Pittman</a>
+    <a href="index.html#contact" class="btn-primary">Contact</a>
+  </nav>
+
+  <!-- Main content — padding-top: 64px in CSS clears the fixed nav -->
+  <main class="main">
+
+    <!-- Extra space below the nav, matching Figma's spacer -->
+    <div class="cs-header-spacer"></div>
+
+    <!-- Page title — uses the larger Display headline + subhead, new pattern for this case study -->
+    <section class="cs-header">
+      <h1 class="cs-title-lg">Uncovering a six figure ARR opportunity while redesigning filters.</h1>
+      <p class="cs-subtitle">A 3 month investigation and UX recommendation project.</p>
+    </section>
+
+    <!-- Hero image — bordered card, not edge-to-edge like CS1's hero -->
+    <section class="cs-hero">
+      <div class="cs-image-card">
+        <img
+          src="assets/images/case-study-2/image-casestudy2-hero.png"
+          alt="Ulta Beauty search results with the filter and guided navigation rail"
+          class="cs-image-full"
+        />
+      </div>
+    </section>
+
+    <!-- TL;DR row — Role & Team / Impact, new narrative overview pattern -->
+    <section class="cs-tldr">
+      <div class="tldr-row">
+
+        <div class="tldr-card">
+          <p class="grid-eyebrow">Role &amp; Team</p>
+          <div>
+            <p class="tldr-lead">Led design, research &amp; strategy</p>
+            <p class="tldr-body">Collaborated with the engineering lead, data analytics, and our 3rd party tool’s anchor.</p>
+          </div>
+        </div>
+
+        <div class="tldr-card">
+          <div class="cs-text-block">
+            <p class="grid-eyebrow">Impact</p>
+            <p class="tldr-impact-figure">+51M incremental ARR</p>
+          </div>
+          <p class="meta-value">Only 1% of shoppers use the filter rail. Those shoppers convert at 6.4x the baseline and bring in $47.4M a year. I mapped the gap, built the case, and designed the engagement fix. At 2%: +$51M*. At 5%: +$168M.*</p>
+          <p class="grid-eyebrow">*Estimation</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Problem / Goal / Context -->
+    <section class="cs-section">
+
+      <div class="cs-text-block">
+        <p class="grid-eyebrow">Problem</p>
+        <h2 class="cs-section-title">The suggested filters experience didn’t surface relevant filters. As a result user engagement was low.</h2>
+      </div>
+      <div class="context-block">
+        <img src="assets/images/case-study-2/icon-asterisk.svg" alt="" class="context-icon" />
+        <p class="context-text">When it was engaged with, the suggested filters conversion numbers were great!</p>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <div class="cs-text-block">
+        <p class="grid-eyebrow">Goal</p>
+        <h2 class="cs-section-title">Investigate and recommend changes to the suggested filters experience.</h2>
+      </div>
+      <div class="context-block">
+        <img src="assets/images/case-study-2/icon-asterisk.svg" alt="" class="context-icon" />
+        <p class="context-text">I was originally tasked by the product team to “supercharge” the discovery experience, but as I started to dig into the filter rail functionality the problem area focused on it’s low engagement but high conversion.</p>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <div class="cs-context-row">
+        <div class="cs-context-column">
+          <div class="cs-text-block">
+            <p class="grid-eyebrow">Context</p>
+            <h2 class="cs-section-title">Ulta Beauty’s core filters live within an overlay, some of which are surfaced in an always-visible rail.</h2>
+          </div>
+          <div class="cs-body-group">
+            <p class="meta-value">The filters surfaced in the rail are a combination of core filters + generated filter keywords scraped from the page that have a high likelihood of clickthrough.</p>
+            <p class="meta-value">Due to the search engine’s more limited keyword search capabilities, user search behavior consisted mostly of short one word queries (e.g. “conditioner”). Users didn’t trust the search engine with longer intelligent searches, but instead refined large search results with a bunch of filters.</p>
+          </div>
+          <div class="context-block">
+            <img src="assets/images/case-study-2/icon-asterisk.svg" alt="" class="context-icon" />
+            <p class="context-text">I spent 2+ years embedded in Ulta’s search &amp; filters team.</p>
+          </div>
+        </div>
+        <div class="cs-image-card context-image">
+          <img
+            src="assets/images/case-study-2/image-casestudy2-filterrail.png"
+            alt="Filter rail showing applied filters and result count for a conditioner search"
+          />
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+    </section>
+
+    <!-- Discovery -->
+    <section class="cs-section">
+
+      <div class="cs-text-block">
+        <p class="grid-eyebrow">Discovery</p>
+        <h2 class="cs-section-title">Baymard best practices, competitive research and internal deep dives informed the solution to the problem.</h2>
+      </div>
+      <div class="cs-body-group">
+        <p class="meta-value">Research spanned Baymard Institute’s filter and navigation guidelines, competitive analysis of beauty e-commerce, and a review of existing internal research. On the quantitative side, I partnered with our analytics team to pull current filter usage and conversion data.</p>
+        <p class="meta-value">The most revealing work came from a series of deep-dives with the developer managing the third-party guided navigation tool. These meetings brought to light the mechanics of the suggested filter rail and <strong>it was in those meetings that I uncovered the CTR/Conversion optimization issues</strong>.</p>
+      </div>
+
+      <div class="key-finding-card">
+        <div class="cs-text-block">
+          <p class="grid-eyebrow grid-eyebrow-accent">Key Finding #1</p>
+          <p class="key-finding-title">Only 1% of shoppers engaged with the suggested filters rail. However, those shoppers converted at 6.4x the baseline rate.</p>
+        </div>
+        <p class="meta-value">The shoppers that engaged with the suggested filter rail also spent more. Average order had 42% larger baskets!</p>
+      </div>
+
+      <div class="key-finding-card">
+        <div class="cs-text-block">
+          <p class="grid-eyebrow grid-eyebrow-accent">Key Finding #2</p>
+          <p class="key-finding-title">The tool was built to optimize for click-through-rate rather than conversion.</p>
+        </div>
+        <p class="meta-value">The highest clicked filter pill was moved to the far left of the rail, into a prime position for more clicks. The first position filter was used to halve the number of results presented to the user. The system could not detect query intent nor could it be optimized to do so easily.</p>
+      </div>
+
+      <div class="key-finding-card">
+        <div class="cs-text-block">
+          <p class="grid-eyebrow grid-eyebrow-accent">Key Finding #3</p>
+          <p class="key-finding-title">Users did not engage with the suggested filters because the filters were not relevant to their goal.</p>
+        </div>
+        <p class="meta-value">Users weren’t converting with the tool because users weren’t engaging selectively with the irrelevant filters. Instead, users went on “filter sprees” clicking the first filters in the rail haphazardly just to reduce the amount of relevant results and overwhelm.</p>
+      </div>
+
+    </section>
+
+    <!-- Solution -->
+    <section class="cs-section">
+
+      <div class="section-divider"></div>
+
+      <div class="cs-text-block">
+        <p class="grid-eyebrow">Solution</p>
+        <h2 class="cs-section-title">A full redesign of the filter section that included a main rail and a dynamic rail.</h2>
+      </div>
+      <p class="meta-value">The top main rail included the filters necessary for most tasks: deals, price, ratings, colors, brand and size. The dynamic rail filters rail was present in select journeys where hyper-relevant filters could be selected to narrow the result set intelligently.</p>
+      <div class="context-block">
+        <img src="assets/images/case-study-2/icon-asterisk.svg" alt="" class="context-icon" />
+        <p class="context-text">The component was built with flexibility in mind. Beyond search results pages, dynamic filters could be surfaced on sale, brand, or event pages.</p>
+      </div>
+      <p class="meta-value">The original filters rail was built with the singular purpose of cutting the result pool in half. Filter suggestions were ranked by click-through rate. whichever filters got the most clicks rose to the top, regardless of whether they helped shoppers find what they were looking for. The redesign shifts the purpose of the suggested filters from click through rate to conversion.</p>
+
+      <div class="cs-image-caption">
+        <div class="cs-image-card">
+          <video class="cs-video-full" autoplay loop muted playsinline>
+            <source src="assets/images/case-study-2/video-casestudy2-solution.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <p class="cs-caption-plain">The default and selected state of the main filter rail.</p>
+      </div>
+
+    </section>
+
+    <!-- Footer — same structure as homepage and CS1 -->
+    <footer class="footer">
+
+      <div class="footer-section">
+        <p class="grid-eyebrow">Quick Links</p>
+        <nav class="footer-links">
+          <a href="index.html" class="footer-link">Work</a>
+          <a href="#" class="footer-link">About</a>
+          <a href="index.html#contact" class="footer-link">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-section">
+        <p class="grid-eyebrow">Connect</p>
+        <nav class="footer-links">
+          <a href="#" class="footer-link">LinkedIn</a>
+          <a href="#" class="footer-link">Dribbble</a>
+          <a href="#" class="footer-link">Download resume</a>
+        </nav>
+      </div>
+
+      <div class="footer-legal">
+        <p>© 2026 Nate Pittman. All rights reserved.</p>
+        <p>Designed with Figma, built with Claude Code, Github, and Vercel.</p>
+      </div>
+
+    </footer>
+
+  </main>
+
+</body>
+</html>
