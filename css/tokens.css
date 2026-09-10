@@ -28,6 +28,7 @@
   --text-display:  44px;
   --text-h1:       34px;
   --text-h2:       26px;
+  --text-h2-mobile: 22px;   /* Figma "Heading 2 Mobile" — case study section titles only, not the homepage hero */
   --text-h3:       20px;
   --text-body-lg:  17px;
   --text-body:     15px;

@@ -599,16 +599,34 @@ a {
   color: var(--color-text);
 }
 
-/* Extra breathing room below the fixed nav on case study pages — Figma's CS2 spacer is 120px, halved here to match how it actually reads in browser */
+/*
+  Extra breathing room below the fixed nav on case study pages.
+  Mobile: Figma specs 96px — not yet eyeballed in browser, adjust if it feels off.
+  Desktop: Figma specs 120px, halved to 60px here to match how it actually reads in browser.
+*/
 .cs-header-spacer {
-  height: 60px;
+  height: 96px;
 }
 
-/* Subhead sitting under cs-title-lg */
-.cs-subtitle {
+@media (min-width: 768px) {
+  .cs-header-spacer {
+    height: 60px;
+  }
+}
+
+/* Subhead sitting under cs-title-lg — two weights, pick per case study in Figma */
+.cs-subtitle-bold {
   font-family: var(--font-body);
   font-size: var(--text-h3);         /* 20px, reuses existing token */
   font-weight: var(--weight-bold);
+  line-height: 24px;
+  color: var(--color-text-muted);
+}
+
+.cs-subtitle-regular {
+  font-family: var(--font-body);
+  font-size: var(--text-h3);         /* 20px, reuses existing token */
+  font-weight: var(--weight-regular);
   line-height: 24px;
   color: var(--color-text-muted);
 }
@@ -636,9 +654,16 @@ a {
 
 .tldr-row {
   display: flex;
+  flex-direction: column;   /* stacked on mobile — Figma mobile shows the two cards on top of each other */
   gap: 24px;
   align-items: stretch;
   width: 100%;
+}
+
+@media (min-width: 768px) {
+  .tldr-row {
+    flex-direction: row;    /* side by side on desktop, as before */
+  }
 }
 
 .tldr-card {
@@ -741,13 +766,21 @@ a {
   width: 100%;
 }
 
-/* Side-by-side text + image layout — used in the Context subsection */
+/* Text + image layout — used in the Context subsection. Stacked on mobile, side-by-side on desktop. */
 .cs-context-row {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: stretch;
   gap: 24px;
   width: 100%;
+}
+
+@media (min-width: 768px) {
+  .cs-context-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
 }
 
 .cs-context-column {
@@ -759,10 +792,16 @@ a {
   max-width: 464px;
 }
 
-/* Constrains the filter-rail image to match the Figma layout width */
+/* Filter-rail image — full width on mobile, fixed width to match Figma's desktop layout */
 .context-image {
-  width: 440px;
+  width: 100%;
   flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .context-image {
+    width: 440px;
+  }
 }
 
 /*
@@ -857,13 +896,19 @@ a {
   gap: 8px;
 }
 
-/* H2 — problem and solution statements (Playfair) */
+/* H2 — problem and solution statements (Playfair). 22px on mobile (Heading 2 Mobile), 26px on desktop. */
 .cs-section-title {
   font-family: var(--font-display);
-  font-size: var(--text-h2);         /* 26px */
+  font-size: var(--text-h2-mobile);  /* 22px */
   font-weight: var(--weight-medium);
   line-height: 28px;
   color: var(--color-text);
+}
+
+@media (min-width: 768px) {
+  .cs-section-title {
+    font-size: var(--text-h2);       /* 26px */
+  }
 }
 
 /* H3 — Goal, Context, and other subsection labels (DM Sans Bold) */
